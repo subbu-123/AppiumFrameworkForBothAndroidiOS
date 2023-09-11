@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Appium Framework Suite" thread-count="3" parallel="tests">
+	<listeners>
+		<listener class-name="TestListeners.AndroidListeners"></listener>
+		<listener class-name="TestListeners.Annotations"></listener>
+	</listeners>
+	<test name="AndroidTest1">
+		<parameter name="deviceName" value="Pixel 4"></parameter>
+		<parameter name="platformName" value="Android"></parameter>
+		<classes>
+			<class name="TestClasses.Android.GeneralStore" />
+		</classes>
+	</test>
+	<test name="AndroidTest2">
+		<parameter name="deviceName" value="Pixel 5"></parameter>
+		<parameter name="platformName" value="Android"></parameter>
+		<classes>
+			<class name="TestClasses.Android.GeneralStore" />
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="3" total="7" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-08-30T10:54:43 IST" name="Appium Framework Suite" finished-at="2023-08-30T10:55:51 IST" duration-ms="67895">
+    <groups>
+    </groups>
+    <test started-at="2023-08-30T10:54:43 IST" name="Basic android test on General store application" finished-at="2023-08-30T10:55:51 IST" duration-ms="67895">
+      <class name="TestClasses.Android.GeneralStore">
+        <test-method is-config="true" signature="launchEmulator(java.lang.String)[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:53:37 IST" name="launchEmulator" finished-at="2023-08-30T10:54:37 IST" duration-ms="60059" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pixel 5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchEmulator -->
+        <test-method is-config="true" signature="startAppiumServer()[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:54:37 IST" name="startAppiumServer" finished-at="2023-08-30T10:54:43 IST" duration-ms="5990" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startAppiumServer -->
+        <test-method is-config="true" signature="settingCapabilities(java.lang.String,java.lang.String)[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:54:43 IST" name="settingCapabilities" finished-at="2023-08-30T10:54:49 IST" duration-ms="6219" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pixel 5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- settingCapabilities -->
+        <test-method signature="validateSuccesfulRegistration(java.util.Map)[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:54:49 IST" name="validateSuccesfulRegistration" data-provider="shopFields" finished-at="2023-08-30T10:55:00 IST" duration-ms="10409" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{name=Subhankar sahoo, CountryName=Austria, productNames=[Jordan 6 Rings, Converse All Star, PG 3]}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSuccesfulRegistration -->
+        <test-method is-config="true" signature="driverTearDown()[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:00 IST" name="driverTearDown" finished-at="2023-08-30T10:55:00 IST" duration-ms="262" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverTearDown -->
+        <test-method is-config="true" signature="settingCapabilities(java.lang.String,java.lang.String)[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:00 IST" name="settingCapabilities" finished-at="2023-08-30T10:55:04 IST" duration-ms="4250" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pixel 5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- settingCapabilities -->
+        <test-method signature="validateSuccesfulRegistration(java.util.Map)[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:04 IST" name="validateSuccesfulRegistration" data-provider="shopFields" finished-at="2023-08-30T10:55:19 IST" duration-ms="14326" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{name=Zarina parveen, CountryName=Brazil, productNames=[Jordan 6 Rings, Converse All Star]}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSuccesfulRegistration -->
+        <test-method is-config="true" signature="driverTearDown()[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:19 IST" name="driverTearDown" finished-at="2023-08-30T10:55:19 IST" duration-ms="280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverTearDown -->
+        <test-method is-config="true" signature="settingCapabilities(java.lang.String,java.lang.String)[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:19 IST" name="settingCapabilities" finished-at="2023-08-30T10:55:23 IST" duration-ms="4183" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pixel 5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- settingCapabilities -->
+        <test-method signature="validationOfErrorMessageOnRegisterScreen(java.util.Map)[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:23 IST" name="validationOfErrorMessageOnRegisterScreen" data-provider="shopFields" finished-at="2023-08-30T10:55:32 IST" duration-ms="9293" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{name=Subhankar sahoo, CountryName=Austria, productNames=[Jordan 6 Rings, Converse All Star, PG 3]}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validationOfErrorMessageOnRegisterScreen -->
+        <test-method is-config="true" signature="driverTearDown()[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:32 IST" name="driverTearDown" finished-at="2023-08-30T10:55:33 IST" duration-ms="262" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverTearDown -->
+        <test-method is-config="true" signature="settingCapabilities(java.lang.String,java.lang.String)[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:33 IST" name="settingCapabilities" finished-at="2023-08-30T10:55:37 IST" duration-ms="4193" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pixel 5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- settingCapabilities -->
+        <test-method signature="validationOfErrorMessageOnRegisterScreen(java.util.Map)[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:37 IST" name="validationOfErrorMessageOnRegisterScreen" data-provider="shopFields" finished-at="2023-08-30T10:55:50 IST" duration-ms="13421" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{name=Zarina parveen, CountryName=Brazil, productNames=[Jordan 6 Rings, Converse All Star]}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validationOfErrorMessageOnRegisterScreen -->
+        <test-method is-config="true" signature="driverTearDown()[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:50 IST" name="driverTearDown" finished-at="2023-08-30T10:55:51 IST" duration-ms="274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverTearDown -->
+        <test-method is-config="true" signature="closeEmulator()[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:51 IST" name="closeEmulator" finished-at="2023-08-30T10:55:51 IST" duration-ms="26" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeEmulator -->
+        <test-method is-config="true" signature="stopAppiumServer()[pri:0, instance:TestClasses.Android.GeneralStore@4d14b6c2]" started-at="2023-08-30T10:55:51 IST" name="stopAppiumServer" finished-at="2023-08-30T10:55:51 IST" duration-ms="79" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopAppiumServer -->
+      </class> <!-- TestClasses.Android.GeneralStore -->
+    </test> <!-- Basic android test on General store application -->
+  </suite> <!-- Appium Framework Suite -->
+</testng-results>
