@@ -11,6 +11,7 @@ import com.google.common.collect.ImmutableMap;
 
 import Utilities.Utils;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
 public class AndroidMobileActions extends Utils{
@@ -18,9 +19,9 @@ public class AndroidMobileActions extends Utils{
 	private AndroidDriver driver;
 	private JavascriptExecutor js;
 
-	public AndroidMobileActions(AndroidDriver driver) {
+	public AndroidMobileActions(AppiumDriver driver) {
 		super(driver);
-		this.driver = driver;
+		this.driver = (AndroidDriver) driver;
 		js = (JavascriptExecutor) this.driver;
 	}
 

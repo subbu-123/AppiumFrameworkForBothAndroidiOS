@@ -9,15 +9,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.Android.AndroidMobileActions;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.remote.SupportsContextSwitching;
 
 public class CartPage extends AndroidMobileActions {
 
-	AndroidDriver driver;
+	AppiumDriver driver;
 
-	public CartPage(AndroidDriver driver) {
+	public CartPage(AppiumDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -61,11 +63,11 @@ public class CartPage extends AndroidMobileActions {
 	{
 		waitForElementToBeClickable(proceedButton).click();
 		staticWait(3000);
-		Set<String> handles = this.driver.getContextHandles();
+		Set<String> handles = ((SupportsContextSwitching) this.driver).getContextHandles();
 		handles.forEach(handle -> {
 			if(handle.contains("WEBVIEW"))
 			{
-				this.driver.context(handle);
+				((SupportsContextSwitching) this.driver).context(handle);
 			}
 		});
 		return new chromeWebViewPage(this.driver);

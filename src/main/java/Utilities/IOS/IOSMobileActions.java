@@ -11,6 +11,7 @@ import com.google.common.collect.ImmutableMap;
 
 import Utilities.Utils;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
@@ -19,9 +20,9 @@ public class IOSMobileActions extends Utils{
 	private IOSDriver driver;
 	private JavascriptExecutor js;
 
-	public IOSMobileActions(IOSDriver driver) {
+	public IOSMobileActions(AppiumDriver driver) {
 		super(driver);
-		this.driver = driver;
+		this.driver = (IOSDriver) driver;
 		js = (JavascriptExecutor) this.driver;
 	}
 	

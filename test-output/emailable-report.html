@@ -9,13 +9,194 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Appium Framework Suite</th></tr>
-<tr><td><a href="#t0">Basic android test on General store application</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">67,895</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Basic android test on General store application</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">3</td><td class="num attn">3</td><td class="num">270,951</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Appium Framework Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Basic android test on General store application &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">TestClasses.Android.GeneralStore</td><td><a href="#m0">validateSuccesfulRegistration</a></td><td rowspan="2">1693373089928</td><td rowspan="2">10409</td></tr><tr class="passedeven"><td><a href="#m1">validateSuccesfulRegistration</a></td></tr><tr class="passedeven"><td><a href="#m2">validationOfErrorMessageOnRegisterScreen</a></td><td rowspan="2">1693373137426</td><td rowspan="2">13421</td></tr><tr class="passedeven"><td><a href="#m3">validationOfErrorMessageOnRegisterScreen</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Appium Framework Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Basic android test on General store application &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">TestClasses.Android.GeneralStore</td><td><a href="#m0">validateUserCompletesCheckout</a></td><td rowspan="1">1724759770757</td><td rowspan="1">38412</td></tr><tr class="failedeven"><td><a href="#m1">validationOfErrorMessageOnRegisterScreen</a></td><td rowspan="2">1724759844582</td><td rowspan="2">19761</td></tr><tr class="failedeven"><td><a href="#m2">validationOfErrorMessageOnRegisterScreen</a></td></tr><tr><th colspan="4">Basic android test on General store application &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="3">TestClasses.Android.GeneralStore</td><td><a href="#m3">validateUserCompletesCheckout</a></td><td rowspan="1">1724759727590</td><td rowspan="1">35616</td></tr><tr class="retriedeven"><td><a href="#m4">validationOfErrorMessageOnRegisterScreen</a></td><td rowspan="2">1724759817174</td><td rowspan="2">19739</td></tr><tr class="retriedeven"><td><a href="#m5">validationOfErrorMessageOnRegisterScreen</a></td></tr><tr><th colspan="4">Basic android test on General store application &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">TestClasses.Android.GeneralStore</td><td><a href="#m6">validateUserCompletesCheckout</a></td><td rowspan="1">1724759667075</td><td rowspan="1">52321</td></tr></tbody>
 </table>
-<h2>Basic android test on General store application</h2><h3 id="m0">TestClasses.Android.GeneralStore#validateSuccesfulRegistration</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Subhankar sahoo, CountryName=Austria, productNames=[Jordan 6 Rings, Converse All Star, PG 3]}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">TestClasses.Android.GeneralStore#validateSuccesfulRegistration</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Zarina parveen, CountryName=Brazil, productNames=[Jordan 6 Rings, Converse All Star]}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">TestClasses.Android.GeneralStore#validationOfErrorMessageOnRegisterScreen</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Zarina parveen, CountryName=Brazil, productNames=[Jordan 6 Rings, Converse All Star]}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">TestClasses.Android.GeneralStore#validationOfErrorMessageOnRegisterScreen</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Subhankar sahoo, CountryName=Austria, productNames=[Jordan 6 Rings, Converse All Star, PG 3]}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Basic android test on General store application</h2><h3 id="m0">TestClasses.Android.GeneralStore#validateUserCompletesCheckout</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Zarina parveen, CountryName=Brazil, productNames=[Jordan 7 Rings, Converse All Star]}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [8163908e-bfcb-4e3b-8005-fc1d70ff3c89, findElement {using=-android uiautomator, value=new UiScrollable(new UiSelector().className(&quot;android.support.v7.widget.RecyclerView&quot;)).scrollIntoView(text(&quot;Jordan 7 Rings&quot;))}]
+Capabilities {appium:app: D:\Eclipse projects\AppiumF..., appium:appPackage: com.androidsample.generalstore, appium:autoGrantPermissions: true, appium:automationName: uiautomator2, appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {app: D:\Eclipse projects\AppiumF..., autoGrantPermissions: true, automationName: uiautomator2, chromedriverUseSystemExecutable: false, deviceName: Pixel 4, noReset: false, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 83, appium:takesScreenshot: true, appium:viewportRect: {height: 2131, left: 0, top: 83, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 8163908e-bfcb-4e3b-8005-fc1d70ff3c89
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at PageObjects.Android.ProductsPage.addProductsToCart(ProductsPage.java:41)
+	at TestClasses.Android.GeneralStore.validateUserCompletesCheckout(GeneralStore.java:136)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">TestClasses.Android.GeneralStore#validationOfErrorMessageOnRegisterScreen</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Subhankar sahoo, CountryName=Austria, productNames=[Jordan 6 Rings, Converse All Star, PG 3]}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.xpath: //android.widget.Toast1})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$REvepNLt.getText(Unknown Source)
+	at PageObjects.Android.RegisterPage.validateErrorToastMsg(RegisterPage.java:55)
+	at TestClasses.Android.GeneralStore.validationOfErrorMessageOnRegisterScreen(GeneralStore.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@70700b8a (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	... 33 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.Toast1})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8&apos;
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 35 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">TestClasses.Android.GeneralStore#validationOfErrorMessageOnRegisterScreen</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Zarina parveen, CountryName=Brazil, productNames=[Jordan 7 Rings, Converse All Star]}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.xpath: //android.widget.Toast1})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$fkWh64yQ.getText(Unknown Source)
+	at PageObjects.Android.RegisterPage.validateErrorToastMsg(RegisterPage.java:55)
+	at TestClasses.Android.GeneralStore.validationOfErrorMessageOnRegisterScreen(GeneralStore.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@6f69e2d8 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	... 33 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.Toast1})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8&apos;
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 35 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">TestClasses.Android.GeneralStore#validateUserCompletesCheckout</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Zarina parveen, CountryName=Brazil, productNames=[Jordan 7 Rings, Converse All Star]}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [f1f5da79-045c-4b62-9648-6869324e3f08, findElement {using=-android uiautomator, value=new UiScrollable(new UiSelector().className(&quot;android.support.v7.widget.RecyclerView&quot;)).scrollIntoView(text(&quot;Jordan 7 Rings&quot;))}]
+Capabilities {appium:app: D:\Eclipse projects\AppiumF..., appium:appPackage: com.androidsample.generalstore, appium:autoGrantPermissions: true, appium:automationName: uiautomator2, appium:chromedriverUseSystemExecutable: false, appium:databaseEnabled: false, appium:desired: {app: D:\Eclipse projects\AppiumF..., autoGrantPermissions: true, automationName: uiautomator2, chromedriverUseSystemExecutable: false, deviceName: Pixel 4, noReset: false, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: false, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:statBarHeight: 83, appium:takesScreenshot: true, appium:viewportRect: {height: 2131, left: 0, top: 83, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: f1f5da79-045c-4b62-9648-6869324e3f08
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at PageObjects.Android.ProductsPage.addProductsToCart(ProductsPage.java:41)
+	at TestClasses.Android.GeneralStore.validateUserCompletesCheckout(GeneralStore.java:136)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">TestClasses.Android.GeneralStore#validationOfErrorMessageOnRegisterScreen</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Subhankar sahoo, CountryName=Austria, productNames=[Jordan 6 Rings, Converse All Star, PG 3]}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.xpath: //android.widget.Toast1})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$dLxbTx4G.getText(Unknown Source)
+	at PageObjects.Android.RegisterPage.validateErrorToastMsg(RegisterPage.java:55)
+	at TestClasses.Android.GeneralStore.validationOfErrorMessageOnRegisterScreen(GeneralStore.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@396f2724 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	... 33 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.Toast1})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8&apos;
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 35 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">TestClasses.Android.GeneralStore#validationOfErrorMessageOnRegisterScreen</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Zarina parveen, CountryName=Brazil, productNames=[Jordan 7 Rings, Converse All Star]}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({By.xpath: //android.widget.Toast1})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$RrBdMqcZ.getText(Unknown Source)
+	at PageObjects.Android.RegisterPage.validateErrorToastMsg(RegisterPage.java:55)
+	at TestClasses.Android.GeneralStore.validationOfErrorMessageOnRegisterScreen(GeneralStore.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@4e26040f (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	... 33 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.Toast1})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8&apos;
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 35 more
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">TestClasses.Android.GeneralStore#validateUserCompletesCheckout</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{name=Subhankar sahoo, CountryName=Austria, productNames=[Jordan 6 Rings, Converse All Star, PG 3]}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

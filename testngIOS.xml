@@ -2,14 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Appium Framework Suite">
 	<listeners>
-		<listener class-name="TestListeners.IOSListeners"></listener>
+		<listener class-name="TestListeners.Listeners"></listener>
 		<listener class-name="TestListeners.Annotations"></listener>
 	</listeners>
 	
 	<test thread-count="5" name="IOSTest">
-		<parameter name="deviceName" value="iPhone 14"></parameter>
+		<parameter name="deviceName" value="iPhone 15 Pro Max (Rosetta)"></parameter>
 		<parameter name="platformName" value="IOS"></parameter>
-		<parameter name="platformVersion" value="16.0"></parameter>
+		<parameter name="platformVersion" value="17.3"></parameter>
 		<classes>
 			<class name="TestClasses.IOS.KitCatalogApp" />
 		</classes>

@@ -2,19 +2,19 @@ package TestListeners;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 
-
-import IOSBase.IOSMobileBase;
+import Utilities.AppiumDriverClass;
 import Utilities.ExtentManager;
 import Utilities.Utils;
 import io.appium.java_client.AppiumDriver;
 
-public class IOSListeners implements ITestListener{
+public class Listeners implements ITestListener{
 
 	ExtentReports extent;
 	ExtentTest extentTest;
@@ -41,15 +41,15 @@ public class IOSListeners implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		
-		try {
-			//driver =  (AppiumDriver) result.getTestClass().getRealClass().get(AndroidMobileBase.getDriver());
-			Object obj = result.getInstance();
-			driver = ((IOSMobileBase)obj).getDriver();
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		} 
-		String screenshotPath = util.captureScreenshot(driver);
+//		try {
+//			driver =  (AppiumDriver) result.getTestClass().getRealClass().get(AndroidMobileBase.getDriver());
+//			Object obj = result.getInstance();
+//			driver = ((AppiumDriverClass) obj).getDriver();
+//		} catch (Exception e) {
+//			
+//			e.printStackTrace();
+//		} 
+		String screenshotPath = util.captureScreenshot(AppiumDriverClass.getDriver());
 		test.get().fail(result.getThrowable(),
 				MediaEntityBuilder.createScreenCaptureFromBase64String(screenshotPath,result.getMethod().getMethodName()).build());
 
@@ -82,5 +82,7 @@ public class IOSListeners implements ITestListener{
 
 		extent.flush();
 	}
+	
+	
 
 }

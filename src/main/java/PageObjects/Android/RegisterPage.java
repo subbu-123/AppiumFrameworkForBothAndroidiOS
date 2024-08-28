@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.Android.AndroidMobileActions;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.functions.ExpectedCondition;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -16,9 +17,9 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class RegisterPage extends AndroidMobileActions {
 
-	AndroidDriver driver;
+	AppiumDriver driver;
 
-	public RegisterPage(AndroidDriver driver) {
+	public RegisterPage(AppiumDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);

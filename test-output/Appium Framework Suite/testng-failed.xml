@@ -2,20 +2,20 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Appium Framework Suite]" guice-stage="DEVELOPMENT">
   <parameter name="platformName" value="Android"/>
-  <parameter name="deviceName" value="Pixel 5"/>
+  <parameter name="deviceName" value="Pixel 4"/>
   <listeners>
-    <listener class-name="TestListeners.AndroidListeners"/>
+    <listener class-name="TestListeners.Listeners"/>
     <listener class-name="TestListeners.Annotations"/>
   </listeners>
   <test thread-count="5" name="Basic android test on General store application(failed)">
     <classes>
       <class name="TestClasses.Android.GeneralStore">
         <methods>
-          <include name="validationOfErrorMessageOnRegisterScreen"/>
+          <include name="validationOfErrorMessageOnRegisterScreen" invocation-numbers="0 1"/>
           <include name="closeEmulator"/>
-          <include name="validateSuccesfulRegistration"/>
           <include name="settingCapabilities"/>
           <include name="driverTearDown"/>
+          <include name="validateUserCompletesCheckout" invocation-numbers="1"/>
           <include name="startAppiumServer"/>
           <include name="launchEmulator"/>
           <include name="stopAppiumServer"/>

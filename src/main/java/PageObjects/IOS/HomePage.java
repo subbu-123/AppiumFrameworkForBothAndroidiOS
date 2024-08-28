@@ -5,15 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.IOS.IOSMobileActions;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class HomePage extends IOSMobileActions{
 	
-	IOSDriver driver;
+	AppiumDriver driver;
 	
-	public HomePage(IOSDriver driver)
+	public HomePage(AppiumDriver driver)
 	{
 		super(driver);
 		this.driver = driver;

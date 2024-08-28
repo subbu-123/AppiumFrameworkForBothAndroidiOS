@@ -22,6 +22,7 @@ import PageObjects.Android.CartPage;
 import PageObjects.Android.ProductsPage;
 import PageObjects.Android.RegisterPage;
 import PageObjects.Android.chromeWebViewPage;
+import Utilities.AppiumDriverClass;
 import Utilities.Utils;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.nativekey.AndroidKey;
@@ -37,7 +38,7 @@ public class GeneralStore extends AndroidMobileBase {
 	@Test(enabled = true, dataProvider = "shopFields")
 	public void validationOfErrorMessageOnRegisterScreen(Map<String,Object> inputData) {  
 
-		rp = new RegisterPage(getDriver());
+		rp = new RegisterPage(AppiumDriverClass.getDriver());
 		rp.clickOnCountryDropdown();
 		
 		String CountryName = (String) inputData.get("CountryName");
@@ -48,10 +49,10 @@ public class GeneralStore extends AndroidMobileBase {
 	}
 	
 
-	@Test(enabled = true, dataProvider = "shopFields")
+	@Test(enabled = false, dataProvider = "shopFields")
 	public void validateSuccesfulRegistration(Map<String,Object> inputData){
 
-		rp = new RegisterPage(getDriver());
+		rp = new RegisterPage(AppiumDriverClass.getDriver());
 		rp.clickOnCountryDropdown();
 		
 		String CountryName = (String)inputData.get("CountryName");
@@ -67,7 +68,7 @@ public class GeneralStore extends AndroidMobileBase {
 	@Test(enabled = false, dataProvider = "shopFields")
 	public void validateProductsAddedToCart(Map<String,Object> inputData){
 
-		rp = new RegisterPage(getDriver());
+		rp = new RegisterPage(AppiumDriverClass.getDriver());
 		rp.clickOnCountryDropdown();
 		
 		String CountryName = (String)inputData.get("CountryName");
@@ -92,7 +93,7 @@ public class GeneralStore extends AndroidMobileBase {
 	@Test(enabled = false, dataProvider = "shopFields")
 	public void validateUserAbleToCheckout(Map<String,Object> inputData){
 
-		rp = new RegisterPage(getDriver());
+		rp = new RegisterPage(AppiumDriverClass.getDriver());
 		rp.clickOnCountryDropdown();
 		
 		String CountryName = (String)inputData.get("CountryName");
@@ -115,10 +116,10 @@ public class GeneralStore extends AndroidMobileBase {
 		
 	}
 	
-	@Test(enabled = false, dataProvider = "shopFields")
+	@Test(enabled = true, dataProvider = "shopFields")
 	public void validateUserCompletesCheckout(Map<String,Object> inputData){
 
-		rp = new RegisterPage(getDriver());
+		rp = new RegisterPage(AppiumDriverClass.getDriver());
 		rp.clickOnCountryDropdown();
 
 		String CountryName = (String)inputData.get("CountryName");

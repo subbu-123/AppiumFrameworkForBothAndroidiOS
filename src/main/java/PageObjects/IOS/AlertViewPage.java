@@ -4,15 +4,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.IOS.IOSMobileActions;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class AlertViewPage extends IOSMobileActions{
 	
-	IOSDriver driver;
+	AppiumDriver driver;
 	
-	public AlertViewPage(IOSDriver driver)
+	public AlertViewPage(AppiumDriver driver)
 	{
 		super(driver);
 		this.driver = driver;

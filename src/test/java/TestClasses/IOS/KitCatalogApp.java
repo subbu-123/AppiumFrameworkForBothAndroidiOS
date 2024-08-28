@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import IOSBase.IOSMobileBase;
 import PageObjects.IOS.AlertViewPage;
 import PageObjects.IOS.HomePage;
+import Utilities.AppiumDriverClass;
 
 public class KitCatalogApp extends IOSMobileBase{
 	
@@ -15,7 +16,7 @@ public class KitCatalogApp extends IOSMobileBase{
 	@Test
 	public void validateAlertViewPopup()
 	{
-		hp = new HomePage(getDriver());
+		hp = new HomePage(AppiumDriverClass.getDriver());
 		avp = hp.clickOnAlerViewOption();
 		avp.clickOkCancelButton();
 		String actualTitle = avp.alertPopupTitle();

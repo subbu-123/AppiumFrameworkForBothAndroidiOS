@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import java.net.*;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,8 +20,10 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import Utilities.AppiumDriverClass;
 import Utilities.Utils;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -28,98 +31,85 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
 public class AndroidMobileBase {
-	
-	private static ThreadLocal<AndroidDriver> driver = new ThreadLocal<AndroidDriver>();
+
 	AppiumDriverLocalService service;
-	DesiredCapabilities cap;
+	UiAutomator2Options options;
 	FileInputStream fis;
 	Properties prop = new Properties();
 	Utils util = new Utils();
-	
-	@BeforeSuite
-	public void startAppiumServer()
-	{
+
+	@BeforeSuite(enabled = true)
+	public void startAppiumServer() throws IOException {
 		service = util.appiumServerInitialization();
 		service.start();
-		
+		System.out.println("Appium driver started");
 	}
-	
-	@AfterSuite
-	public void stopAppiumServer()
-	{
+
+	@AfterSuite(enabled = true)
+	public void stopAppiumServer() {
 		service.stop();
-		
+		System.out.println("Appium driver stopped");
+
 	}
-	
+
 	@BeforeMethod
-	@Parameters({"deviceName","platformName"})
-	public void settingCapabilities(String deviceName, String platformName) throws IOException
-	{
+	@Parameters({ "deviceName", "platformName" })
+	public void settingCapabilities(String deviceName, String platformName) throws IOException {
 		fis = new FileInputStream(new File(System.getProperty("user.dir") + "/globalConfig.properties"));
 		prop.load(fis);
 		String appName = prop.getProperty("AndroidAppName");
-		
-		cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
-		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-		cap.setCapability(MobileCapabilityType.NO_RESET, false);
-		cap.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
-		
-		if(prop.getProperty("appType").equals("Native"))
-		{
-			cap.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "/Resources/" + appName);
+
+		options = new UiAutomator2Options();
+		options.setPlatformName(platformName).setAutomationName("uiautomator2").setDeviceName(deviceName)
+				.setNoReset(false).setAutoGrantPermissions(true);
+
+		if (prop.getProperty("appType").equals("Native")) {
+			options.setApp(System.getProperty("user.dir") + "/Resources/" + appName);
 		}
-		
-		else if(prop.getProperty("appType").equals("Hybrid"))
-		{
-			cap.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "/Resources/" + appName);
-			cap.setCapability(AndroidMobileCapabilityType.CHROMEDRIVER_USE_SYSTEM_EXECUTABLE, true);
+
+		else if (prop.getProperty("appType").equals("Hybrid")) {
+			options.setApp(System.getProperty("user.dir") + "/Resources/" + appName)
+			.setChromedriverUseSystemExecutable(false);
 		}
-		
-		else if(prop.getProperty("appType").equals("Mobile Web"))
-		{
-			cap.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
-		}
-		else
-		{
+
+		else if (prop.getProperty("appType").equals("Mobile Web")) {
+			options.withBrowserName("chrome");
+		} else {
 			System.err.println("Please provide a correct app type in the global config file");
 		}
-		
-		setDriver(new AndroidDriver(service.getUrl(), cap));
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		AppiumDriverClass.setDriver(new AndroidDriver(service.getUrl(), options));
+		AppiumDriverClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
-	
+
 	@AfterMethod
-	public void driverTearDown()
-	{
-		getDriver().closeApp();
-		getDriver().quit();
+	public void driverTearDown() {
+		AppiumDriverClass.getDriver().quit();
 	}
-	
+
 	/*
 	 * @BeforeMethod public void driverInitialization() {
 	 * 
 	 * }
 	 */
-	
+
 	/*
 	 * @AfterMethod public void driverTearDown() { getDriver().closeApp();
 	 * getDriver().quit(); }
 	 */
-	
+
 	@BeforeSuite(enabled = true)
 	@Parameters("deviceName")
 	public void launchEmulator(String deviceName) throws IOException {
 
 		fis = new FileInputStream(new File(System.getProperty("user.dir") + "/globalConfig.properties"));
 		prop.load(fis);
-		
+
 		String sdkPath = prop.getProperty("sdkPath");
 		String emulatorPath = sdkPath + "emulator" + File.separator + "emulator";
 
-		//System.out.println("Starting emulator for '" + nameOfAVD + "' ...");
-		System.out.println("Starting emulator for 'Pixel 5' ...");
+		// System.out.println("Starting emulator for '" + nameOfAVD + "' ...");
+		System.out.println("Starting emulator for " + deviceName + " ...");
 		String[] aCommand = new String[] { emulatorPath, "-avd", deviceName.replace(" ", "_") };
 		try {
 
@@ -136,7 +126,7 @@ public class AndroidMobileBase {
 
 		fis = new FileInputStream(new File(System.getProperty("user.dir") + "/globalConfig.properties"));
 		prop.load(fis);
-		
+
 		String sdkPath = prop.getProperty("sdkPath");
 		String adbPath = sdkPath + "platform-tools" + File.separator + "adb";
 		System.out.println("Killing emulator...");
@@ -149,16 +139,5 @@ public class AndroidMobileBase {
 			e.printStackTrace();
 		}
 	}
-	
 
-	public static AndroidDriver getDriver()
-	{
-		return driver.get();
-	}
-	
-	public void setDriver(AndroidDriver driver)
-	{
-		this.driver.set(driver);
-	}
-	
 }

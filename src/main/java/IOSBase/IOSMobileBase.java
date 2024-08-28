@@ -19,9 +19,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import Utilities.AppiumDriverClass;
 import Utilities.Utils;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -29,65 +31,47 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
 public class IOSMobileBase {
-	
-	
-	public static ThreadLocal<IOSDriver> driver = new ThreadLocal<IOSDriver>();
+
 	AppiumDriverLocalService service;
+	XCUITestOptions options;
 	Utils util = new Utils();
 	FileInputStream fis;
 	Properties prop = new Properties();
-	
-	
+
 	@BeforeSuite
-	public void startAppiumServer()
-	{
+	public void startAppiumServer() throws IOException {
 		service = util.appiumServerInitialization();
 		service.start();
-		
+
 	}
-	
+
 	@AfterSuite
-	public void stopAppiumServer()
-	{
+	public void stopAppiumServer() {
 		service.stop();
-		
+
 	}
-	
+
 	@BeforeMethod
-	@Parameters({"deviceName","platformName","platformVersion"})
-	public void driverInitialization(String deviceName, String platformName, String platformVersion) throws IOException
-	{
+	@Parameters({ "deviceName", "platformName", "platformVersion" })
+	public void driverInitialization(String deviceName, String platformName, String platformVersion)
+			throws IOException {
 		fis = new FileInputStream(new File(System.getProperty("user.dir") + "/globalConfig.properties"));
 		prop.load(fis);
 		String appName = prop.getProperty("IosAppName");
-		
-		DesiredCapabilities cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
-		cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
-		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-		cap.setCapability(MobileCapabilityType.NO_RESET, false);
-		cap.setCapability(IOSMobileCapabilityType.AUTO_ACCEPT_ALERTS, true);
-		cap.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "/Resources/" + appName);
 
-		driver.set(new IOSDriver(service.getUrl(), cap));
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
+		options = new XCUITestOptions();
+		options.setPlatformName(platformName).setPlatformVersion(platformVersion).setAutomationName("XCUITest")
+				.setDeviceName(deviceName).setNoReset(false).setAutoAcceptAlerts(true)
+				.setApp(System.getProperty("user.dir") + "/Resources/" + appName);
+
+		AppiumDriverClass.setDriver(new IOSDriver(service.getUrl(), options));
+		AppiumDriverClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
 	}
-	
+
 	@AfterMethod
-	public void driverTearDown()
-	{
-		//driver.closeApp();
-		getDriver().quit();
+	public void driverTearDown() {
+		AppiumDriverClass.getDriver().quit();
 	}
-	
-	
-	public static IOSDriver getDriver()
-	{
-		return driver.get();
-	}
-	
-	
 
 }

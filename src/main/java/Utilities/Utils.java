@@ -1,15 +1,18 @@
 package Utilities;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -29,6 +32,8 @@ public class Utils {
 	AppiumDriver driver;
 	WebDriver wdriver;
 	public WebDriverWait wait;
+	FileInputStream fis;
+	Properties prop = new Properties();
 	
 	public Utils(AppiumDriver driver) {
 
@@ -69,15 +74,21 @@ public class Utils {
 		}
 	}
 	
-	public AppiumDriverLocalService appiumServerInitialization()
+	public AppiumDriverLocalService appiumServerInitialization() throws IOException
 	{
 		AppiumDriverLocalService service;
+		fis = new FileInputStream(new File(System.getProperty("user.dir") + "/globalConfig.properties"));
+		prop.load(fis);
+		String nodePath = prop.getProperty("node_path");
+		String appiumPath = prop.getProperty("appium_path");
 		service = new AppiumServiceBuilder()
-				.usingDriverExecutable(new File("/usr/local/bin/node"))
-				.withAppiumJS(new File("/usr/local/lib/node_modules/appium"))
+				.usingDriverExecutable(new File(nodePath))
+				.withAppiumJS(new File(appiumPath))
 				.usingAnyFreePort()
 				.withIPAddress("127.0.0.1").withArgument(GeneralServerFlag.SESSION_OVERRIDE)
-				.withArgument(GeneralServerFlag.LOG_LEVEL, "error").build();
+				.withArgument(GeneralServerFlag.LOG_LEVEL, "error")
+				.withArgument(() -> "--allow-insecure","chromedriver_autodownload")
+				.build();
 
 		return service;
 	}

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.Android.AndroidMobileActions;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
@@ -18,9 +19,9 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class ProductsPage extends AndroidMobileActions {
 
-	AndroidDriver driver;
+	AppiumDriver driver;
 
-	public ProductsPage(AndroidDriver driver) {
+	public ProductsPage(AppiumDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
